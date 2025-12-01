@@ -1,0 +1,139 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: "Hanken Grotesk", sans-serif;
+}
+
+
+h1 {
+	color: white;
+	font-family: "Hanken Grotesk", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+}
+
+h2 {
+	font-weight: 100;
+	font-size: 3em;
+    margin-bottom: 3em;
+}
+
+h3 {
+    font-size: 1.25em;
+    color: white;
+    padding-top: 3em;
+    font-weight: 100;
+
+
+}
+p {
+    font-size: 2em;
+    width: 50%;
+    font-weight: 200;
+    padding: 2em;
+}
+
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            padding: 2em;
+        }
+
+        .tile-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2em;
+            max-width: 1200px;
+            margin-top: 0 auto;
+        }
+
+        .tile {
+            aspect-ratio: 1;
+            border-radius: 0px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-color: #007bff;
+        }
+
+        .tile:active {
+            transform: translateY(0);
+        }
+
+        .tile-image {
+            width: 100%;
+            height: 70%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f0f0f0"/><text x="50" y="50" font-family="Arial" font-size="12" fill="%23999" text-anchor="middle" dy="0.3em">Image</text></svg>');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .tile-content {
+            padding: 1em;
+            height: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+           
+        }
+
+        .tile-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            text-align: left;
+            font-weight: 200;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .tile-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5em;
+            }
+            
+            body {
+                padding: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tile-container {
+                grid-template-columns: 1fr;
+                gap: 1em;
+            }
+        }
+
+
+a {
+  background: linear-gradient(currentColor 0 0) 
+    bottom left/
+    var(--underline-width, 0%) 0.1em
+    no-repeat;
+  color: #fff;
+  display: inline-block;
+  padding: 0 0em 0.2em;
+  text-decoration: none;
+  transition: background-size 0.5s;
+}
+
+a:hover {
+  --underline-width: 100%;
+}
