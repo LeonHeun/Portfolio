@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leon Heun</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="icons/leon_logo_32.svg"/>
+
+    <!-- Hanken Grotesk font link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+  </head>
+  <body>
+    <h1>Leon Heun</h1>
+
+    <h2>3D/Gestaltung im Raum<br>
+    Photographie<br>
+    Layouts und Branding</h2>
+
+
+    <div class="tile-container">
+
+
+
+        <a href="Packshot.html" target="_blank" class="tile-link">
+            <div class="tile" onclick="handleTileClick(1)">
+            <div class="tile-image" style="background-image: url('images/packshot.jpeg');"></div>
+
+            <div class="tile-content">
+                <div class="tile-title">Packshot</div>
+            </div>
+        </div>
+    </a>
+        <a href="3d-realism.html" target="_blank" class="tile-link">
+        <div class="tile" onclick="handleTileClick(2)">
+            <div class="tile-image" style="background-image: url('images/realism.jpeg');"></div>
+            <div class="tile-content">
+                <div class="tile-title">3D Realism</div>
+            </div>
+        </div>
+    </a>
+        <a href="virtual_compositing.html" target="_blank" class="tile-link">
+        <div class="tile" onclick="handleTileClick(3)">
+            <div class="tile-image" style="background-image: url('images/virtcompositing.jpeg');"></div>
+            <div class="tile-content">
+                <div class="tile-title">Virtual compositing</div>
+            </div>
+        </div>
+    </a>
+        
+    <a href="Videography.html" target="_blank" class="tile-link">
+        <div class="tile" onclick="handleTileClick(4)">
+            <div class="tile-image" style="background-image: url('images/videography.jpeg');"></div>
+            <div class="tile-content">
+                <div class="tile-title">Urban Photography and Videography</div>
+            </div>
+        </div>
+    </a>
+        <a href="2D-animation.html">
+        <div class="tile" onclick="handleTileClick(5)">
+            <div class="tile-image"  style="background-image: url('images/2danimation.jpeg');"></div>
+            <div class="tile-content">
+                <div class="tile-title">2D Animation</div>
+            </div>
+        </div>
+    </a>
+        
+        <div class="tile" onclick="handleTileClick(6)">
+            <div class="tile-image" style="background-image: url('images/expdesign.jpeg');"></div>
+            <div class="tile-content">
+                <div class="tile-title">Experimental design</div>
+            </div>
+        </div>
+        
+        <div class="tile" onclick="handleTileClick(7)">
+            <div class="tile-image" style="background-image: url('images/human.jpeg');"></div>
+            <div class="tile-content">
+                <div class="tile-title">Human photography</div>
+            </div>
+        </div>
+        
+        <div class="tile" onclick="handleTileClick(8)">
+            <div class="tile-image" style="background-image: url('images/docu.jpeg');"></div>
+            <div class="tile-content">
+                <div class="tile-title">Documentary photography</div>
+            </div>
+        </div>
+        
+        <div class="tile" onclick="handleTileClick(9)">
+            <div class="tile-image"  style="background-image: url('images/layout.jpeg');"></div>
+            <div class="tile-content">
+                <div class="tile-title">Layout & Branding</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      
+        
+        // function - add a new tile dynamically
+        function addTile(title, imageUrl) {
+            const container = document.querySelector('.tile-container');
+            const tileCount = container.children.length + 1;
+            
+            const tile = document.createElement('div');
+            tile.className = 'tile';
+            tile.onclick = () => handleTileClick(tileCount);
+            
+            const tileImage = document.createElement('div');
+            tileImage.className = 'tile-image';
+            if (imageUrl) {
+                tileImage.style.backgroundImage = `url('${imageUrl}')`;
+            }
+            
+            const tileContent = document.createElement('div');
+            tileContent.className = 'tile-content';
+            
+            const tileTitle = document.createElement('div');
+            tileTitle.className = 'tile-title';
+            tileTitle.textContent = title || `Tile ${tileCount}`;
+            
+            tileContent.appendChild(tileTitle);
+            tile.appendChild(tileImage);
+            tile.appendChild(tileContent);
+            container.appendChild(tile);
+        }
+        
+        // add imgs to existing tiles
+        function setTileImage(tileIndex, imageUrl) {
+            const tiles = document.querySelectorAll('.tile');
+            if (tiles[tileIndex - 1]) {
+                const imageDiv = tiles[tileIndex - 1].querySelector('.tile-image');
+                imageDiv.style.backgroundImage = `url('${imageUrl}')`;
+            }
+        }
+        
+        // lines below to test adding images
+        // setTileImage(1, 'https://via.placeholder.com/300x200/007bff/ffffff?text=Sample+1');
+        // setTileImage(2, 'https://via.placeholder.com/300x200/28a745/ffffff?text=Sample+2');
+    </script>
+  </body>
+
+  <a href="mailto:lheun2001@gmail.com"><h3>Tell me about your ideas.</h3></a>
+  <a href="https://www.instagram.com/leonh2nd/"><h3>Or take a look at my Instagram account</h3></a>
+</html>
